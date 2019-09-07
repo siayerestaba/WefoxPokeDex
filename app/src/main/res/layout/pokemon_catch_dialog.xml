@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:padding="@dimen/margin_10dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/dialogPokeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:src="@mipmap/placeholder"
+                android:scaleType="fitCenter"/>
+
+        <TextView
+                android:id="@+id/dialogPokeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Pokemon's name"
+                style="@style/title"/>
+
+        <TextView
+                android:id="@+id/dialogPokeWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="69"
+                style="@style/subtitle"/>
+
+        <TextView
+                android:id="@+id/dialogPokeHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="7"
+                style="@style/subtitle"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/margin_10dp"
+                      android:orientation="horizontal">
+
+            <Button android:id="@+id/cancelCatch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_cancel"
+                    android:layout_weight="1" />
+
+            <Button android:id="@+id/acceptCatch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_catch"
+                    android:backgroundTint="@color/colorAccent"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,12 @@
+package com.iliaberlana.wefoxpokedex.usecases
+
+import arrow.core.Either
+import com.iliaberlana.wefoxpokedex.domain.data.PokemonRepository
+import com.iliaberlana.wefoxpokedex.domain.entities.Pokemon
+import com.iliaberlana.wefoxpokedex.domain.exception.DomainError
+
+class GetPokemon (
+    private val pokemonRepository: PokemonRepository
+) {
+    suspend operator fun invoke(pokemonId: Int): Either<DomainError, Pokemon> = pokemonRepository.getPokemon(pokemonId)
+}

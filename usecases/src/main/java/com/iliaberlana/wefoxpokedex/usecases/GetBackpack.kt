@@ -8,5 +8,5 @@ import com.iliaberlana.wefoxpokedex.domain.exception.DomainError
 class GetBackpack (
     private val pokemonRepository: PokemonRepository
 ) {
-    suspend operator fun invoke(): Either<DomainError, List<Pokemon>> = pokemonRepository.getBackpack()
+    suspend operator fun invoke(orderBy: String): Either<DomainError, List<Pokemon>> = pokemonRepository.getBackpack(orderBy)
 }
