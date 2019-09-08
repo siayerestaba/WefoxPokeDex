@@ -20,7 +20,7 @@ class MapperPokemonRemoteToPokemonTest {
         val expected =
             Pokemon(1, 1, "bulbasaur", created, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
 
-        val pokemonDB = PokemonRemote(
+        val pokemonRemote = PokemonRemote(
             1,
             1,
             "bulbasaur",
@@ -31,7 +31,7 @@ class MapperPokemonRemoteToPokemonTest {
             listOf(Types(Type("poison")), Types(Type("grass")))
         )
 
-        val actual = pokemonDB.toDomain()
+        val actual = pokemonRemote.toDomain()
 
         assertThat(expected).isEqualToWithGivenProperties(
             actual,

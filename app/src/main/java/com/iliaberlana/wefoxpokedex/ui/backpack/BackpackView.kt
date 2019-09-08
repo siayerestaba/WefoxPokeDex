@@ -11,4 +11,7 @@ interface BackpackView: BaseView {
     fun showPokemon(pokemonUI: PokemonUI)
 
     fun showPokemonToCatch(pokemonUI: PokemonUI)
+
+    fun showErrorCase(stringId: Int)
+    fun hideErrorCase()
 }

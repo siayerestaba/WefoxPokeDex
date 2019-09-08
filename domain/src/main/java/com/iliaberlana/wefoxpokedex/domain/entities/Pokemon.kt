@@ -13,8 +13,3 @@ data class Pokemon(
     val experience: Int,
     val typesPokemon: List<String>
 )
-{
-    override fun toString(): String {
-        return "Pokemon(id=$id, order=$order, name='$name', created=$created, weight=$weight, height=$height, imageUrl='$imageUrl', experience=$experience, typesPokemon=$typesPokemon)"
-    }
-}

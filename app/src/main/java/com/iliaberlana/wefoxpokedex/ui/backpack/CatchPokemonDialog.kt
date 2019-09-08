@@ -9,7 +9,6 @@ import com.iliaberlana.wefoxpokedex.R
 import com.iliaberlana.wefoxpokedex.ui.commons.loadImage
 import com.iliaberlana.wefoxpokedex.ui.model.PokemonUI
 import kotlinx.android.synthetic.main.pokemon_catch_dialog.view.*
-import kotlinx.android.synthetic.main.pokemon_detail.*
 
 class CatchPokemonDialog : DialogFragment() {
 

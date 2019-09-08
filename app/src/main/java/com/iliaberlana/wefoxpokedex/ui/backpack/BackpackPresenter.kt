@@ -15,7 +15,7 @@ class BackpackPresenter(
     private val catchPokemon: CatchPokemon
 ) : CoroutineScope by MainScope() {
     var view: BackpackView? = null
-    private var orderBy: Ordenation = Ordenation.CATCHED
+    var orderBy: Ordenation = Ordenation.CATCHED
 
     fun renderBackpack() = launch {
         view?.showLoading()

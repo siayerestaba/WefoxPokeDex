@@ -8,7 +8,6 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.iliaberlana.wefoxpokedex.R
 import com.iliaberlana.wefoxpokedex.ui.commons.loadImage
-import com.iliaberlana.wefoxpokedex.ui.commons.logDebug
 import com.iliaberlana.wefoxpokedex.ui.commons.toast
 import com.iliaberlana.wefoxpokedex.ui.model.PokemonUI
 
@@ -40,20 +39,8 @@ class DetailActivity : AppCompatActivity(), DetailView {
         presenter.renderPokemon(pokemonId!!)
     }
 
-    override fun onResume() {
-        super.onResume()
-        presenter.view = this
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        presenter.onDestroy()
-    }
-
     override fun updateActionBar(pokemonName: String) {
         actionbar!!.title = pokemonName
-
     }
 
     override fun showPokemon(pokemonUI: PokemonUI) {
@@ -79,14 +66,19 @@ class DetailActivity : AppCompatActivity(), DetailView {
         this.toast(this, resources.getString(stringId))
     }
 
-    override fun showErrorCase(stringId: Int) {
-    }
-
-    override fun hideErrorCase() {
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.view = this
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        presenter.onDestroy()
     }
 }

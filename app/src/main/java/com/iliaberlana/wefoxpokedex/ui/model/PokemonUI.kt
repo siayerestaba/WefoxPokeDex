@@ -19,10 +19,6 @@ data class PokemonUI(
     fun toDomain(): Pokemon =
         Pokemon(id, order, name, created, weight, height, imageUrl, experience, listOf(typesPokemon))
 
-    override fun toString(): String {
-        return "PokemonUI(id=$id, order=$order, name='$name', created=$created, weight=$weight, height=$height, imageUrl='$imageUrl', experience=$experience, typesPokemon='$typesPokemon')"
-    }
-
     companion object {
         fun fromDomain(pokemon: Pokemon): PokemonUI = PokemonUI(
             pokemon.id,
@@ -36,6 +32,4 @@ data class PokemonUI(
             pokemon.typesPokemon.joinToString(", ")
         )
     }
-
-
 }

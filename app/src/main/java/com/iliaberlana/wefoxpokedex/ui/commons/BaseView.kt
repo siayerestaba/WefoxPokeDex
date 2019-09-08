@@ -5,7 +5,4 @@ interface BaseView {
     fun showLoading()
 
     fun showToastMessage(stringId: Int)
-
-    fun showErrorCase(stringId: Int)
-    fun hideErrorCase()
 }

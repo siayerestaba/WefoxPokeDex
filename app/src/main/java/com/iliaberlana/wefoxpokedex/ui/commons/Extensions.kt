@@ -18,10 +18,6 @@ fun Context.toast(context: Context = applicationContext, message: String, durati
     Toast.makeText(context, message, duration).show()
 }
 
-fun String.cleanHexCaracters(): String {
-    return this.replace("\r", "").replace("\n", "").replace("\t", "")
-}
-
 fun ImageView.loadImage(path: String?) {
     Glide.with(context)
         .load(path)

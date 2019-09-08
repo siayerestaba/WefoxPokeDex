@@ -5,15 +5,13 @@
     <string name="action_catch">Catch</string>
     <string name="menu_order">Order by date</string>
 
-    <string name="welcome">You need search a pokemon</string>
-    <string name="question_catch">Find this pokemon\nWould you like catch this pokemon?</string>
+    <string name="welcome">You need search\na pokemon</string>
 
     <string name="pokemon_weight">Weight: %1$s</string>
     <string name="pokemon_height">Height: %1$s</string>
     <string name="pokemon_experience">Experience: %1$s</string>
     <string name="pokemon_date">Catched date: %1$s</string>
     <string name="pokemon_types">Types: %1$s</string>
-
 
     <string name="noPokemonFound">Not pokemon found.</string>
     <string name="noInternetConectionError">Please, check you Internet connection.</string>

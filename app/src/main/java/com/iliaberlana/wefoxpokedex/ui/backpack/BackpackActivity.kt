@@ -1,12 +1,9 @@
 package com.iliaberlana.wefoxpokedex.ui.backpack
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.Window
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.iliaberlana.wefoxpokedex.R
@@ -14,9 +11,6 @@ import com.iliaberlana.wefoxpokedex.ui.commons.toast
 import com.iliaberlana.wefoxpokedex.ui.detail.DetailActivity
 import com.iliaberlana.wefoxpokedex.ui.model.PokemonUI
 import kotlinx.android.synthetic.main.list_withprogressbar_text.*
-import kotlinx.android.synthetic.main.pokemon_catch_dialog.*
-import kotlinx.android.synthetic.main.pokemon_item.*
-import kotlinx.android.synthetic.main.pokemon_item.pokemonName
 import kotlinx.android.synthetic.main.pokemon_list.*
 import org.koin.androidx.scope.currentScope
 
