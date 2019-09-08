@@ -11,6 +11,7 @@ data class PokemonDbEntity(
     @PrimaryKey val id: Int,
     @ColumnInfo val order: Int,
     @ColumnInfo val name: String,
+    @ColumnInfo val created: Date,
     @ColumnInfo val weight: Int,
     @ColumnInfo val height: Int,
     @ColumnInfo(name = "image_url") val imageUrl: String,
@@ -18,13 +19,14 @@ data class PokemonDbEntity(
     @ColumnInfo(name = "types_pokemon") val typesPokemon: String
 ) {
     fun toDomain(): Pokemon =
-        Pokemon(id, order, name, Date(), weight, height, imageUrl, experience, listOf(typesPokemon))
+        Pokemon(id, order, name, created, weight, height, imageUrl, experience, listOf(typesPokemon))
 
     companion object {
         fun fromDomain(pokemon: Pokemon): PokemonDbEntity = PokemonDbEntity(
             pokemon.id,
             pokemon.order,
             pokemon.name,
+            pokemon.created,
             pokemon.weight,
             pokemon.height,
             pokemon.imageUrl,

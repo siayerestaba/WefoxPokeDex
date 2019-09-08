@@ -13,14 +13,21 @@ import org.junit.Test
 import java.util.*
 
 class PokemonRepositoryTest {
-    private val pokemon1 = Pokemon(1, 1, "bulbasaur", Date(), 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
-    private val pokemon2 = Pokemon(2, 2, "bulbasaur", Date(), 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
-    private val pokemon3 = Pokemon(3, 3, "bulbasaur", Date(), 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
-    private val pokemon4 = Pokemon(4, 4, "bulbasaur", Date(), 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
-    private val pokemon1DB = PokemonDbEntity(1, 1, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
-    private val pokemon2DB = PokemonDbEntity(2, 2, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
-    private val pokemon3DB = PokemonDbEntity(3, 3, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
-    private val pokemon4DB = PokemonDbEntity(4, 4, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+    private val date1 = Date()
+    private val pokemon1 = Pokemon(1, 1, "bulbasaur", date1, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
+    private val pokemon1DB = PokemonDbEntity(1, 1, "bulbasaur", date1, 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+
+    private val date2 = Date()
+    private val pokemon2DB = PokemonDbEntity(2, 2, "bulbasaur", date2, 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+    private val pokemon2 = Pokemon(2, 2, "bulbasaur", date2, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
+
+    private val date3 = Date()
+    private val pokemon3DB = PokemonDbEntity(3, 3, "bulbasaur", date3, 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+    private val pokemon3 = Pokemon(3, 3, "bulbasaur", date3, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
+
+    private val date4 = Date()
+    private val pokemon4DB = PokemonDbEntity(4, 4, "bulbasaur", date4, 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+    private val pokemon4 = Pokemon(4, 4, "bulbasaur", date4, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison", "grass"))
 
     private val pokemonDao = mockk<PokemonDao>()
     private val pokemonDataSource = mockk<PokemonRemoteDataSource>()

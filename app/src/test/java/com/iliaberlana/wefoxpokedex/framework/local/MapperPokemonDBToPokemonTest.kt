@@ -17,7 +17,7 @@ class MapperPokemonDBToPokemonTest {
             Pokemon(1, 1, "bulbasaur", created, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison, grass"))
 
         val pokemonDB =
-            PokemonDbEntity(1, 1, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+            PokemonDbEntity(1, 1, "bulbasaur", created, 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
 
         val actual = pokemonDB.toDomain()
 
@@ -38,7 +38,7 @@ class MapperPokemonDBToPokemonTest {
     fun `should return PokemonDbEntity from Pokemon with same values`() {
         val created = Date()
 
-        val expected = PokemonDbEntity(1, 1, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+        val expected = PokemonDbEntity(1, 1, "bulbasaur", created,69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
 
         val pokemon =
             Pokemon(1, 1, "bulbasaur", created, 69, 7, "https://via.placeholder.com/150", 64, listOf("poison, grass"))

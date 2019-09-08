@@ -7,7 +7,7 @@ import com.iliaberlana.wefoxpokedex.framework.local.model.PokemonDbEntity
 
 @Dao
 interface PokemonDao {
-    @Query("SELECT * FROM PokemonDbEntity ORDER BY name")
+    @Query("SELECT * FROM PokemonDbEntity ORDER BY created desc")
     suspend fun getAll(): List<PokemonDbEntity>
 
     @Insert

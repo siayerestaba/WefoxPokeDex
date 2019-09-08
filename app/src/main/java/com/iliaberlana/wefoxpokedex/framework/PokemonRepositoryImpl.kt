@@ -36,14 +36,11 @@ class PokemonRepositoryImpl(
         try {
             val listPokemonsCatched = pokemonDao.getAll()
 
-            this.javaClass.name.logDebug("********* ORDER -> $orderBy")
             if(orderBy == Ordenation.ORDER.typeOrdenation) {
                 val listSorted = listPokemonsCatched.sortedBy { it.order }
-                this.javaClass.name.logDebug("********* listSorted -> $listSorted")
                 return Either.right(listSorted.map { it.toDomain() })
             }
 
-            this.javaClass.name.logDebug("********* listPokemonsCatched -> $listPokemonsCatched")
             return Either.right(listPokemonsCatched.map { it.toDomain() })
         } catch (exception: Exception) {
             javaClass.name.logDebug(exception.message?: "Error in getBackpack")

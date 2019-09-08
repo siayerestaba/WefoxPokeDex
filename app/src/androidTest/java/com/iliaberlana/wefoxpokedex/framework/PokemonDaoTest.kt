@@ -15,6 +15,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
@@ -42,13 +43,13 @@ class PokemonDaoTest {
         val firstList = pokemonDatabase.pokemonDao().getAll()
         assertTrue(firstList.isEmpty())
 
-        val recipe = PokemonDbEntity(1, 1, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+        val pokemon = PokemonDbEntity(1, 1, "bulbasaur", Date(), 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
 
-        pokemonDatabase.pokemonDao().insert(recipe)
+        pokemonDatabase.pokemonDao().insert(pokemon)
 
         val list = pokemonDatabase.pokemonDao().getAll()
-        assertk.assertThat(recipe)
-            .isEqualToWithGivenProperties(list[0], PokemonDbEntity::id, PokemonDbEntity::order, PokemonDbEntity::name, PokemonDbEntity::weight, PokemonDbEntity::height, PokemonDbEntity::imageUrl, PokemonDbEntity::experience, PokemonDbEntity::typesPokemon)
+        assertk.assertThat(pokemon)
+            .isEqualToWithGivenProperties(list[0], PokemonDbEntity::id, PokemonDbEntity::order, PokemonDbEntity::name, PokemonDbEntity::created, PokemonDbEntity::weight, PokemonDbEntity::height, PokemonDbEntity::imageUrl, PokemonDbEntity::experience, PokemonDbEntity::typesPokemon)
     }
 
     @Test
@@ -56,13 +57,13 @@ class PokemonDaoTest {
         val firstList = pokemonDatabase.pokemonDao().getAll()
         assertTrue(firstList.isEmpty())
 
-        val recipe = PokemonDbEntity(1, 1, "bulbasaur", 69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
+        val recipe = PokemonDbEntity(1, 1, "bulbasaur", Date(),69, 7, "https://via.placeholder.com/150", 64, "poison, grass")
 
         pokemonDatabase.pokemonDao().insert(recipe)
 
         val pokemon = pokemonDatabase.pokemonDao().getPokemon(1)
         assertk.assertThat(recipe)
-            .isEqualToWithGivenProperties(pokemon!!, PokemonDbEntity::id, PokemonDbEntity::order, PokemonDbEntity::name, PokemonDbEntity::weight, PokemonDbEntity::height, PokemonDbEntity::imageUrl, PokemonDbEntity::experience, PokemonDbEntity::typesPokemon)
+            .isEqualToWithGivenProperties(pokemon!!, PokemonDbEntity::id, PokemonDbEntity::order, PokemonDbEntity::name, PokemonDbEntity::created, PokemonDbEntity::weight, PokemonDbEntity::height, PokemonDbEntity::imageUrl, PokemonDbEntity::experience, PokemonDbEntity::typesPokemon)
     }
 
     @Test
