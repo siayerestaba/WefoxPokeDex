@@ -6,6 +6,7 @@ In this exercise I used:
 - MVP
 - Koin
 - Coroutines
+- Room
 - Arrow
 - Retrofit
 - Moshi
